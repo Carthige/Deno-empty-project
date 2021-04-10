@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  api:
+    container_name: Deno-Dummy
+    image: hayd/deno
+    command: run --allow-env --allow-net --allow-read src/mod.ts
+    volumes:
+      - .:/home/app
+    working_dir: /home/app
+    ports:
+      - "8444:8444"
